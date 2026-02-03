@@ -1,0 +1,149 @@
+#prog2005-BIT250186-Nguyễn Hữu Khải
+#Bài1
+n = int(input("Nhập số từ 1 đến 9: "))
+
+if 1 <= n <= 9:
+    for i in range(1, 10):
+        print(f"{n} x {i} = {n * i}")
+else:
+    print("Số không hợp lệ!")
+#Bài2
+n = int(input("Nhập một số dương: "))
+
+if n < 2:
+    print("Không phải số nguyên tố")
+else:
+    is_prime = True
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            is_prime = False
+            break
+
+    if is_prime:
+        print("Là số nguyên tố")
+    else:
+        print("Không phải số nguyên tố")
+#Bài3
+n = int(input("Nhập n: "))
+
+a, b = 0, 1
+for _ in range(n):
+    print(a, end=" ")
+    a, b = b, a + b
+#Bài4
+n = input("Nhập một số: ")
+tong = 0
+
+for ch in n:
+    tong += int(ch)
+
+print("Tổng các chữ số là:", tong)
+#Bài5
+chuoi = input("Nhập chuỗi: ")
+ky_tu = input("Nhập ký tự cần đếm: ")
+
+dem = 0
+for ch in chuoi:
+    if ch == ky_tu:
+        dem += 1
+
+print(f"Ký tự '{ky_tu}' xuất hiện {dem} lần")
+#Bài6
+def giaithua(n):
+    if n == 0 or n == 1:
+        return 1
+    return n * giaithua(n - 1)
+
+n = int(input("Nhập số n: "))
+print("Giai thừa =", giaithua(n))
+Bài7#
+a = int(input("Nhập số a: "))
+b = int(input("Nhập số b: "))
+
+while a != b:
+    if a > b:
+        a -= b
+    else:
+        b -= a
+
+print("Ước số chung lớn nhất là:", a)
+
+Bài8#
+n = int(input("Nhập số: "))
+dao = 0
+
+while n > 0:
+    dao = dao * 10 + n % 10
+    n //= 10
+
+print("Số đảo ngược:", dao)
+
+Bài9#
+n = input("Nhập số nguyên dương 5 chữ số: ")
+
+max_digit = int(n[0])
+for ch in n:
+    if int(ch) > max_digit:
+        max_digit = int(ch)
+
+print("Chữ số lớn nhất là:", max_digit)
+
+Bài10#
+def tong(n):
+    if n == 1:
+        return 1
+    return n + tong(n - 1)
+
+n = int(input("Nhập n: "))
+print("Tổng =", tong(n))
+
+Bài11#
+diem = float(input("Nhập điểm trung bình: "))
+
+if diem >= 8:
+    print("Giỏi")
+elif diem >= 6.5:
+    print("Khá")
+elif diem >= 5:
+    print("Trung bình")
+else:
+    print("Yếu")
+
+Bài12#
+password = ""
+
+while password != "python123":
+    password = input("Nhập mật khẩu: ")
+
+print("Đăng nhập thành công!")
+
+Bài13#
+password = ""
+
+while password != "python123":
+    password = input("Nhập mật khẩu: ")
+
+print("Đăng nhập thành công!")
+
+Bài14#
+n = int(input("Nhập n: "))
+
+if n < 2:
+    print("Không phải số nguyên tố")
+else:
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            print("Không phải số nguyên tố")
+            break
+    else:
+        print("Là số nguyên tố")
+
+Bài15#
+n = int(input("Nhập số nguyên dương: "))
+tong = 0
+
+while n > 0:
+    tong += n % 10
+    n //= 10
+
+print("Tổng các chữ số =", tong)
